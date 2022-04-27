@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
@@ -16,27 +17,67 @@
 
     <div class="container">
 
-        <form>
+        <p>
+            1) If I <input type="text" id='were_id' class="complete"> (be) you, I <input type="text" class="complete"
+                id="gap"> (do)
+            that!
+        </p>
+        <p>
+            2) If I <input type="text" class="complete"> (have) a million dollars, I <input type="text" class="complete"
+                id="gap2">
+            (spend) it on charity.
+        </p>
+        <p>
+            3) If I <input type="text" class="complete"> (can) turn back time, I <input type="text" class="complete"
+                id="gap3"> (go)
+            to 1999.
+        </p>
+        <p>
+            4) If my friends <input type="text" class="complete"> (be) rich, They <input type="text" class="complete"
+                id="gap4">
+            (throw) a big party!
+        </p>
+        <p>
+            5) If pollution <input type="text" class="complete"> (dicrease), we <input type="text" class="complete"
+                id="gap5">
+            (breath) a purer air.
+        </p>
 
-            <p>
-                1) If I <input type="text" class="complete"> (be) you, I <input type="text" id="gap"> (do) that!
-            </p>
-            <p>
-                2) If I <input type="text" class="complete"> (have) a million dollars, I <input type="text" id="gap"> (spend) it on charity.
-            </p>
-            <p>
-                3) If I <input type="text" class="complete"> (can) turn back time, I <input type="text" id="gap"> (go) to 1999.
-            </p>
-            <p>
-                4) If my friends <input type="text" class="complete"> (be) rich, They <input type="text" id="gap"> (throw) a big party!
-            </p>
-            <p>
-                5) If pollution <input type="text" class="complete"> (dicrease), we <input type="text" id="gap"> (breath) a purer air.
-            </p>
-
-            <button>submit</button>
-        </form>
+        <button onclick="check()">submit</button>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
+
+
+<script>
+
+    var lista_de_respuestas = {
+        were_id: "were",
+        gap: "wouldn´t do"
+    }
+
+    function check()
+    {
+        var elementos = $('.complete')
+
+        for (var index in elementos)
+        {
+
+            var elemento_particular = $(elementos[index])
+
+            if (elemento_particular.val() == lista_de_respuestas[elemento_particular[0].id])
+            {
+                elemento_particular.css('border', '3px solid green')
+            }
+            else
+            {
+                elemento_particular.css('border', '3px solid red')
+
+            }
+
+        }
+    }
+</script>
 
 </html>
